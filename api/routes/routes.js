@@ -8,8 +8,9 @@ module.exports = router;
 //Post Method
 router.post('/post', async (req, res) => {
     const data = new Model({
+        title: req.body.title,
         name: req.body.name,
-        age: req.body.age
+        story: req.body.story
     })
 
     try {
