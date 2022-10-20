@@ -3,10 +3,13 @@ const Model = require('../models/model');
 
 const router = express.Router()
 
-module.exports = router;
+
 
 //Post Method
-router.post('/post', async (req, res) => {
+router.post('/', async (req, res) => {
+    console.log("******************")
+    console.log(req.body);
+    console.log("******************")
     const data = new Model({
         title: req.body.title,
         name: req.body.name,
@@ -73,3 +76,4 @@ router.delete('/delete/:id', async (req, res) => {
         res.status(400).json({ message: error.message })
     }
 })
+module.exports = router;
