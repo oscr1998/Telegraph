@@ -69,18 +69,18 @@ async function appendOne(post) {
     //create h1 tag for title
     console.log(post)
     const div = document.createElement('div');
-    div.setAttribute('id', post.id);
+    div.setAttribute('id', "postContent");
     div.setAttribute('class', "post")
     allPosts.insertBefore(div,allPosts.children[0])
     const title = document.createElement('h1');
-    title.textContent = post.title;
+    title.textContent = `Title: ${post.title}`;
     div.appendChild(title);
-    const story = document.createElement('h3');
-    story.textContent = post.story;
-    div.appendChild(story);
     const name = document.createElement('p');
-    name.textContent = post.name;
+    name.textContent = `Name: ${post.name}`;
     div.appendChild(name);
+    const story = document.createElement('h3');
+    story.textContent = `Story: ${post.story}`;
+    div.appendChild(story);
 }
 async function hideForm() {
     const container = document.getElementById("container");
@@ -108,6 +108,8 @@ function updateMain(hash) {
         const container = document.getElementById("container");
         container.style.display = "none"
         fetchOne(id);
+        const posts = document.querySelector(".post")
+        posts.style.display = "block"
 
     } else {
         const container = document.getElementById("container");
