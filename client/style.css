@@ -41,6 +41,10 @@ body{
 	font-family: 'Roboto', sans-serif;
 }
 
+.container:hover{
+    border: white solid 2px;
+}
+
 input{
     margin: 20px;
 }
@@ -79,8 +83,6 @@ input{
 	transform: scale(1.2);
 	transition: .3s;
 }
-
-
 
 
 .input-container{
@@ -130,6 +132,9 @@ input{
 	text-align: center;
 }
 
+#postContent:hover{
+	border: white solid 2px;
+}
 /* glow on hover */
 
 .glow-on-hover {
