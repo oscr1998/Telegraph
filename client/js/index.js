@@ -1,4 +1,4 @@
-const submitForm = document.getElementById('submitForm')
+const form = document.getElementById('submitForm')
 
 submitForm.addEventListener('submit', async (e) => {
     try{
@@ -32,7 +32,16 @@ submitForm.addEventListener('submit', async (e) => {
         console.log(dataFromIDJsonified);
 
         location.href = "post.html";
-            
+        // window.location.hash = `${id}`
+        // let windowLocation = window.location.href
+
+        // let url = `http://127.0.0.1:5500/client/index.html?#${id}`;
+
+        // console.log("split", window.location.href.split("#")[1])
+
+        //     console.log("id:", id)
+        //     console.log(window.location.href)
+            // console.log("id from url:", windowID)
             // let title = document.getElementById('titlePost')
             // title.textContent = `${dataFromIDJsonified.title}`
 

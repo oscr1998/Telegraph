@@ -4,29 +4,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script defer src="./js/index.js"></script>
+    <script defer src="./js/index3.js"></script>
     <title>Document</title>
 </head>
-<body>
+<body onload="updateContent()">
     <header></header>
 
     <main>
         <article>
-            <div>
+            <div class="container" id="container">
                 <form id="submitForm">
-                    <input type="text" id="title" placeholder="Title">
-                    <input type="text" id="name" placeholder="Your name">
-                    <input type="text" id="story" placeholder="Your story...">
+                    <span class="text-center">Make a post</span>
+                    <div class="input-container">
+                        <input type="text" id="title">
+                        <label>Title</label>
+                    </div>
+                    <div class="input-container">
+                        <input type="text" id="name">
+                        <label>Name</label>
+                    </div>
+                    <div class="input-container">
+                        <input type="text" id="story">
+                        <label>Story</label>
+                    </div>
+                    <div class="input-container">
                     <input type="submit" id="submitButton" placeholder="PUBLISH">
+                    </div>
                 </form>
             </div>
-
-            <div id="container">
-                <div class="title" id="titlePost"></div>
-                <div class="name" id="namePost"></div>
-                <div class="story" id="storyPost"></div>
-            </div>
             
+            <div class="post" id="all-post">
+
+            </div>
+
         </article>
     </main>
 
