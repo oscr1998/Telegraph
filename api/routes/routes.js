@@ -3,8 +3,6 @@ const Model = require('../models/model');
 
 const router = express.Router()
 
-
-
 //Post Method
 router.post('/', async (req, res) => {
     console.log("******************")
@@ -15,7 +13,7 @@ router.post('/', async (req, res) => {
         name: req.body.name,
         story: req.body.story
     })
-
+    // console.log(data._id);
     try {
         const dataToSave = await data.save();
         res.status(200).json(dataToSave)
@@ -26,7 +24,7 @@ router.post('/', async (req, res) => {
 })
 
 
-router.get('/getAll', async (req, res) => {
+router.get('/posts', async (req, res) => {
     try{
         const data = await Model.find();
         res.json(data)
@@ -37,7 +35,7 @@ router.get('/getAll', async (req, res) => {
 })
 
 //Get by ID Method
-router.get('/getOne/:id', async (req, res) => {
+router.get('/posts/:id', async (req, res) => {
     try{
         const data = await Model.findById(req.params.id);
         res.json(data)
@@ -48,7 +46,7 @@ router.get('/getOne/:id', async (req, res) => {
 })
 
 //Update by ID Method
-router.patch('/update/:id', async (req, res) => {
+router.patch('/posts/:id', async (req, res) => {
     try {
         const id = req.params.id;
         const updatedData = req.body;
@@ -66,7 +64,7 @@ router.patch('/update/:id', async (req, res) => {
 })
 
 //Delete by ID Method
-router.delete('/delete/:id', async (req, res) => {
+router.delete('/posts/:id', async (req, res) => {
     try {
         const id = req.params.id;
         const data = await Model.findByIdAndDelete(id)

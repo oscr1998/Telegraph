@@ -7,18 +7,31 @@ submitForm.addEventListener('submit', async (e) => {
         const submitObject = { 
             title: e.target.title.value,
             name: e.target.name.value,
-            story: e.target.story.value}
-            console.log(submitObject)
-            
-        await fetch('https://localhost:3000/api/post', {
-            method: "POST",
+            story: e.target.story.value
+        }
+          //  console.log(submitObject)
 
-            body: JSON.stringify(submitObject),
-
-            headers:{
-                "Content-type": "application/json; charset=UTF-8"
+            const options = {
+                method: "POST",
+                headers:{
+                    "Content-type": "application/json"
+                },
+                body: JSON.stringify(submitObject),           
             }
-        }).then(r => r.json())
+            
+        await fetch('http://localhost:3000/api/', options )
+
+        const data = await fetch('http://localhost:3000/api/posts/');
+        const postData = await data.json();
+
+        console.log(postData);
+        console.log("###########################",postData[postData.length-1]._id);
+        const id = postData[postData.length-1]._id;
+        const dataFromID = await fetch(`http://localhost:3000/api/posts/${id}`)
+        const dataFromIDJsonified = await dataFromID.json();
+        console.log(dataFromIDJsonified);
+
+        location.href = "post.html";
     } catch (err) {
         console.log(err)
     }
