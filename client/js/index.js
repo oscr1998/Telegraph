@@ -32,6 +32,16 @@ submitForm.addEventListener('submit', async (e) => {
         console.log(dataFromIDJsonified);
 
         location.href = "post.html";
+            
+            // let title = document.getElementById('titlePost')
+            // title.textContent = `${dataFromIDJsonified.title}`
+
+            // let name = document.getElementById('namePost')
+            // name.textContent = `${dataFromIDJsonified.name}`
+
+            // let story = document.getElementById('storyPost')
+            // story.textContent = `${dataFromIDJsonified.story}`
+
     } catch (err) {
         console.log(err)
     }
