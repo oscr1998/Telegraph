@@ -9,9 +9,6 @@ app.use(express.json());
 const mongoose = require('mongoose');
 const mongoString = process.env.DATABASE_URL;
 
-
-
-
 mongoose.connect(mongoString);
 const database = mongoose.connection;
 
