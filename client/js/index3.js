@@ -22,7 +22,7 @@ async function submitPost(e){
 
 async function sendToServer(postData) {
     try {
-        const newPostData = await fetch("https://colorful-telegraph.onrender.com/api/", {
+        const newPostData = await fetch("https://telegraph-attempt2.onrender.com/api/", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -39,7 +39,7 @@ async function sendToServer(postData) {
 
 async function fetchAll() {
     try {
-        const data = await fetch("https://colorful-telegraph.onrender.com/api/posts");
+        const data = await fetch("https://telegraph-attempt2.onrender.com/api/posts");
         const res = await data.json();
         res.forEach((data) => appendOne(data))
     } catch (error) {
@@ -49,7 +49,7 @@ async function fetchAll() {
 
 async function fetchOne(id) {
     try {
-        const data = await fetch(`https://colorful-telegraph.onrender.com/api/posts/${id}`);
+        const data = await fetch(`https://telegraph-attempt2.onrender.com/api/posts/${id}`);
         const res = await data.json();
         console.log("res", res)
         console.log("error", res.err)
@@ -87,7 +87,7 @@ async function hideForm() {
     container.style.display = "none";
 }
 async function redirect(id) {
-    window.location.href = `https://colorful-telegraph.onrender.com/client/index.html/${id}`;
+    window.location.href = `https://telegraph-attempt2.onrender.com/client/index.html/${id}`;
 }
 async function revealForm() {
     const container = document.getElementById("container");
